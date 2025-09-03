@@ -1,0 +1,27 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "target": "esnext",         // Para recursos modernos do JavaScript
+    "module": "node16",         // Emitir sintaxe de módulo ES
+    "moduleResolution": "node16", // ESSENCIAL: Diz ao TS para usar a resolução de módulos ES do Node.js 16+
+    "esModuleInterop": true,    // Prática recomendada para interoperabilidade, mesmo com verbatimModuleSyntax
+    "verbatimModuleSyntax": true, // Garante saída pura de módulo ES (sem flags __esModule, sem objeto exports)
+    "forceConsistentCasingInFileNames": true, // Boa prática
+    "strict": true,             // Habilita todas as opções rigorosas de verificação de tipo
+    "skipLibCheck": true,       // Pular verificação de tipo de todos os arquivos .d.ts
+    "types": [ "node" ],        // Incluir tipos do Node.js
+    "sourceMap": true,          // Gerar arquivos sourcemap
+    "outDir": "./dist",         // Saída dos arquivos compilados para o diretório 'dist' (recomendado)
+    "rootDir": "./",            // Especificar o diretório raiz dos arquivos fonte
+    // "declaration": true,       // Opcional: Gerar arquivos .d.ts
+    // "declarationMap": true,    // Opcional: Gerar sourcemaps para arquivos .d.ts
+    // "isolatedModules": true,   // Manter se você estiver usando ferramentas de build que transpilam arquivos individualmente
+    // "jsx": "react-jsx", // Remover se não estiver usando React/JSX
+    // "noUncheckedIndexedAccess": true, // Estas são ótimas para strictness, mas podem ser removidas temporariamente se estiver causando muitos erros no início
+    // "exactOptionalPropertyTypes": true,
+    "paths": {
+      "@src/*": ["./src/*"] // Mapeia o alias @src para a pasta src
+    }
+  }
+}
